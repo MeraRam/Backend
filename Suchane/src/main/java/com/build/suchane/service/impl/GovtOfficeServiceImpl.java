@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GovtOfficeServiceImpl implements GovtOfficeService {
@@ -22,5 +23,10 @@ public class GovtOfficeServiceImpl implements GovtOfficeService {
     @Override
     public List<GovtOffice> getAllGovtOffices() {
         return govtOfficeRepository.findAll();
+    }
+
+    @Override
+    public Optional<GovtOffice> getGovtOfficeById(Long id) {
+        return govtOfficeRepository.findById(id);
     }
 }

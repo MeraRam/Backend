@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatusCode;
 
 import java.util.Set;
 
@@ -20,6 +21,6 @@ public class District {
     @Column(nullable = false)
     private String districtName;
 
-    @OneToMany(mappedBy = "district",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "district",cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     private Set<Taluk> taluks;
 }

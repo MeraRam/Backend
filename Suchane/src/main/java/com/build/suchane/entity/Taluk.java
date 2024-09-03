@@ -21,7 +21,7 @@ public class Taluk {
     @Column(nullable = false)
     private String talukName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "district_id",nullable = false)
     private District district;
 
